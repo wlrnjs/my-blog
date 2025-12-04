@@ -9,7 +9,7 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "지권 블로그",
+  title: "지권",
   description: "지권 블로그",
 };
 
