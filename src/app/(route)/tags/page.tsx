@@ -2,8 +2,8 @@ import { Article } from "@/shared/ui";
 
 const page = () => {
   return (
-    <Article>
-      <h1>전체 태그 페이지</h1>
+    <Article title="Tags" intro="모든 태그">
+      <p>전체 태그 페이지</p>
     </Article>
   );
 };

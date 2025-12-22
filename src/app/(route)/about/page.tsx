@@ -8,14 +8,7 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
   return (
-    <Article>
-      <h1>About</h1>
-      <br />
-
-      <p className="text-xl">About the site</p>
-      <hr />
-      <br />
-
+    <Article title="About" intro="About the site">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur sed animi
         laborum praesentium facilis!
