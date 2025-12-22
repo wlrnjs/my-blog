@@ -18,7 +18,7 @@ export function ModeToggle() {
     <button
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="flex h-6 w-6 items-center justify-center rounded-md border p-0.5"
+      className="flex-center h-6 w-6 rounded-md border p-0.5"
       aria-label="Toggle theme"
     >
       <span className="sr-only">Toggle mode</span>
