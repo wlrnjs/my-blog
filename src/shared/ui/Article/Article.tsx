@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 interface ArticleProps {
   children: ReactNode;
   title: string;
-  intro: string;
+  intro?: string;
 }
 
 const Article = ({ children, title, intro }: ArticleProps) => {
@@ -13,7 +13,7 @@ const Article = ({ children, title, intro }: ArticleProps) => {
         <h1 className="font-bold tracking-tight">{title}</h1>
 
         <div className="space-y-1">
-          <p className="text-xl">{intro}</p>
+          {intro && <p className="text-xl">{intro}</p>}
           <hr />
         </div>
       </header>

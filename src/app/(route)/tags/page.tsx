@@ -1,11 +1,10 @@
 import { Article } from "@/shared/ui";
+import { TagList } from "@/entities/tag/ui";
 
-const page = () => {
+export default function TagsPage() {
   return (
-    <Article title="Tags" intro="모든 태그">
-      <p>전체 태그 페이지</p>
+    <Article title="Tags">
+      <TagList />
     </Article>
   );
-};
-
-export default page;
+}
