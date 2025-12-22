@@ -43,6 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={cn(
           "min-h-screen bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50",
+          "transition-colors",
           inter.className
         )}
       >
