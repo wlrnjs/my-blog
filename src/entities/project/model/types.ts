@@ -1,9 +1,12 @@
 export interface Project {
+  slug: string;
   title: string;
   summary: string;
   techStack: string[];
-  image: {
+  thumbnail: {
     src: string;
     alt: string;
   };
+  period: string;
+  featured?: boolean;
 }
