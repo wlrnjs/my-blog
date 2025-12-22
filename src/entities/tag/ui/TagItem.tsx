@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TagWithCount } from "../api/tag.api";
+import { TagWithCount } from "../model/types";
 
 const TagItem = ({ tag }: { tag: TagWithCount }) => {
   return (

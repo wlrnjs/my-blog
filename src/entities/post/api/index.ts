@@ -5,3 +5,5 @@ export { searchPosts } from "./posts.search";
 export { getPostsWithCategories } from "./posts.getWithCategories";
 export { getPostsByTag } from "./posts.getByTag";
 export { getAllTags } from "./tags.getAll";
+export { getPostsByTagSlug } from "./posts.getByTagSlug";
+export { getPostsByCategorySlug } from "./posts.getByCategorySlug";

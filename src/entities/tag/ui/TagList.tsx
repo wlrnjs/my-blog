@@ -1,5 +1,5 @@
 import TagItem from "./TagItem";
-import { getAllTagsWithCount } from "../api/tag.api";
+import { getAllTagsWithCount } from "../api/tags.getAllWithCount";
 
 const TagList = async () => {
   const tags = await getAllTagsWithCount();
