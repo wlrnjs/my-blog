@@ -38,10 +38,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 }
 
 export async function getPostSlugs(): Promise<string[]> {
-  const { data, error } = await supabase
-    .from("posts")
-    .select("slug")
-    .eq("status", "published");
+  const { data, error } = await supabase.from("posts").select("slug").eq("status", "published");
 
   if (error) {
     console.error("Error fetching post slugs:", error);

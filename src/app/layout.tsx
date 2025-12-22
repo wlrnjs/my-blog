@@ -20,7 +20,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <head>
         <Script
           async
@@ -42,12 +42,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body
         className={cn(
-          "antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50",
+          "min-h-screen bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50",
           inter.className
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="max-w-2xl mx-auto py-10 px-4">
+          <div className="mx-auto max-w-2xl px-4 py-10">
             <Header />
             <main>{children}</main>
           </div>

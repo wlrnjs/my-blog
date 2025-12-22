@@ -4,7 +4,7 @@ import { ModeToggle } from "@/features/mode-toggle";
 
 const HeaderNav = () => {
   return (
-    <nav className="ml-auto text-sm font-medium space-x-6">
+    <nav className="ml-auto space-x-6 text-sm font-medium">
       {NAV_ITEMS.map((item) => (
         <Link key={item.href} href={item.href}>
           {item.label}
