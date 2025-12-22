@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/entities/post/api/api";
+
 import ReactMarkdown from "react-markdown";
 import { Article } from "@/shared/ui";
+import { getAllPosts, getPostBySlug } from "@/entities/post/api";
 
 interface PostProps {
   params: Promise<{
