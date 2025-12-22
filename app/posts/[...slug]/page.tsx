@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPosts } from "@/lib/api";
 import { Metadata } from "next";
-import { MarkdownContent } from "@/components/markdown-content";
 
 interface PostProps {
   params: Promise<{
@@ -59,7 +58,6 @@ export default async function PostPage({ params }: PostProps) {
         </p>
       )}
       <hr className="my-4" />
-      <MarkdownContent content={post.content} />
     </article>
   );
 }

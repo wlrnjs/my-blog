@@ -7,19 +7,19 @@
     "build": "next build",
     "preview": "next build && next start",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx --max-warnings=0"
+    "lint": "next lint"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.81.1",
     "@tailwindcss/typography": "^0.5.9",
-    "@vercel/analytics": "^1.6.1",
+    "@vercel/analytics": "^1.0.0",
     "autoprefixer": "10.4.14",
     "gray-matter": "^4.0.3",
-    "next": "^16.0.7",
+    "next": "16.0.10",
     "next-themes": "^0.2.1",
     "postcss": "8.4.23",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
+    "react": "19.1.4",
+    "react-dom": "19.1.4",
     "react-markdown": "^10.1.0",
     "rehype-highlight": "^7.0.2",
     "remark-gfm": "^4.0.1",
@@ -30,7 +30,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.1",
-    "eslint-config-next": "^16.0.7",
+    "eslint-config-next": "16.0.10",
     "typescript": "^5.9.3"
   }
 }

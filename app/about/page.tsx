@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { MarkdownContent } from "@/components/markdown-content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -30,8 +29,6 @@ export default function AboutPage() {
       <h1>About</h1>
       <p className="text-xl">About the site</p>
       <hr />
-      <MarkdownContent content={aboutContent} />
     </article>
   );
 }
-
