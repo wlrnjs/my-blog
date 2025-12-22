@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/entities/post/api/api";
+import ReactMarkdown from "react-markdown";
+import { Article } from "@/shared/ui";
 
 interface PostProps {
   params: Promise<{
@@ -48,12 +50,9 @@ export default async function PostPage({ params }: PostProps) {
   }
 
   return (
-    <article className="py-6">
-      <h1 className="mb-2">{post.title}</h1>
-      {post.description && (
-        <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">{post.description}</p>
-      )}
+    <Article title="Blog" intro={post.title}>
+      {post.description && <ReactMarkdown>{post.description}</ReactMarkdown>}
       <hr className="my-4" />
-    </article>
+    </Article>
   );
 }
