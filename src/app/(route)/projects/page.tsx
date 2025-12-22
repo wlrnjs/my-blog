@@ -1,12 +1,10 @@
 import { Article } from "@/shared/ui";
+import { ProjectList } from "@/entities/project/ui";
 
 const page = () => {
   return (
     <Article title="Projects" intro="My Projects">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aliquid reiciendis
-        dolores eveniet vel amet.
-      </p>
+      <ProjectList />
     </Article>
   );
 };
