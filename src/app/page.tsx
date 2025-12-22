@@ -1,18 +1,5 @@
-import Link from "next/link";
-import { getAllPosts } from "@/entities/post/api/api";
+import { PostList } from "@/entities/post/ui";
 
-export default async function Home() {
-  const allPosts = await getAllPosts();
-
-  return (
-    <div className="prose dark:prose-invert">
-      {allPosts.map((post) => (
-        <article key={post.id}>
-          <Link href={`/posts/${post.slug}`}>
-            <h2 className="line-clamp-2">{post.title}</h2>
-          </Link>
-        </article>
-      ))}
-    </div>
-  );
+export default function Home() {
+  return <PostList />;
 }
