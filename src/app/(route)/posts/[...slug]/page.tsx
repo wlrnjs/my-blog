@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
-import { getPostBySlug, getAllPosts } from "@/lib/api";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getAllPosts, getPostBySlug } from "@/entities/post/api/api";
 
 interface PostProps {
   params: Promise<{

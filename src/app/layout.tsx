@@ -1,10 +1,11 @@
-import Link from "next/link";
 import "./globals.css";
+import { ReactNode } from "react";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/mode-toggle";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import { cn } from "../shared/lib";
+import { Header } from "@/widgets";
+import { ThemeProvider } from "./providers/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +15,7 @@ export const metadata = {
 };
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -40,19 +41,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body
-        className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
+        className={cn(
+          "antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50",
+          inter.className
+        )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="max-w-2xl mx-auto py-10 px-4">
-            <header>
-              <div className="flex items-center justify-between">
-                <ModeToggle />
-                <nav className="ml-auto text-sm font-medium space-x-6">
-                  <Link href="/">Home</Link>
-                  <Link href="/about">About</Link>
-                </nav>
-              </div>
-            </header>
+            <Header />
             <main>{children}</main>
           </div>
         </ThemeProvider>

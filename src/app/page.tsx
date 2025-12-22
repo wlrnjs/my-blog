@@ -1,5 +1,5 @@
-import { getAllPosts } from "@/lib/api";
 import Link from "next/link";
+import { getAllPosts } from "@/entities/post/api/api";
 
 export default async function Home() {
   const allPosts = await getAllPosts();

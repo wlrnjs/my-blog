@@ -3,7 +3,7 @@ import {
   Post,
   SearchResult,
   PostWithCategories,
-} from "./supabase";
+} from "../../../shared/supabase/supabase";
 
 // Posts API
 export async function getAllPosts(): Promise<Post[]> {
