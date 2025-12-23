@@ -1,5 +1,7 @@
 import { PostList } from "@/entities/post/ui";
 
-export default function Home() {
+const Home = () => {
   return <PostList />;
-}
+};
+
+export default Home;
