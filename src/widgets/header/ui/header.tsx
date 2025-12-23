@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/shared/lib";
-import { NAV_ITEMS } from "../model/NAVIGATION";
+import { NAV_ITEMS } from "../model/NAVIGATION_map";
 import { ModeToggle } from "@/features/mode-toggle";
 
 const HeaderNav = () => {
