@@ -26,13 +26,16 @@ const ExternalLinkItem = ({ href, label, external, iconKey }: ExternalLinkItemPr
 
 const ExternalLinks = () => {
   return (
-    <section className="mt-8 flex justify-end">
-      <div className="flex items-center gap-2">
-        {EXTERNAL_LINKS.map((item) => (
-          <ExternalLinkItem key={item.label} {...item} />
-        ))}
-      </div>
-    </section>
+    <>
+      <hr className="mt-8" />
+      <section className="mt-8 flex justify-end">
+        <div className="flex items-center gap-2">
+          {EXTERNAL_LINKS.map((item) => (
+            <ExternalLinkItem key={item.label} {...item} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
