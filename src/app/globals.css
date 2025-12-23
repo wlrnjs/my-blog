@@ -12,6 +12,18 @@ body.dark {
   background: #020617;
 }
 
+@layer base {
+  ::selection {
+    background-color: rgba(255, 235, 59, 0.6);
+    color: #000;
+  }
+
+  .dark ::selection {
+    background-color: rgba(255, 214, 0, 0.75);
+    color: #000;
+  }
+}
+
 @layer utilities {
   .flex-center {
     @apply flex items-center justify-center;
