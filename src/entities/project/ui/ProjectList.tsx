@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import { PROJECTS } from "../model/PROJECTS";
+import { PROJECTS } from "../model/PROJECTS_map";
 
 const ProjectList = () => {
   return (
