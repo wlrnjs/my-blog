@@ -2,25 +2,25 @@ export const EXTERNAL_LINKS = [
   {
     label: "GitHub",
     href: "https://github.com/wlrnjs",
-    iconSrc: "/about/github-mark-white.svg",
+    iconKey: "github",
     external: true,
   },
   {
     label: "Email",
     href: "mailto:wlrnjs5824@gmail.com",
-    iconSrc: "/about/gmail.svg",
+    iconKey: "gmail",
     external: false,
   },
   {
     label: "LinkedIn",
     href: "https://linkedin.com/in/wlrnjs",
-    iconSrc: "/about/linkedin.svg",
+    iconKey: "linkedin",
     external: true,
   },
   {
     label: "Instagram",
     href: "https://instagram.com/_wlrnjs",
-    iconSrc: "/about/instagram.png",
+    iconKey: "instagram",
     external: true,
   },
 ] as const;

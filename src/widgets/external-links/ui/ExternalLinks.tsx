@@ -1,22 +1,25 @@
-import Image from "next/image";
 import { EXTERNAL_LINKS } from "../model/EXTERNAL_LINKS";
+import { ICON_BY_KEY, IconKey } from "../model/ICON_MAP";
 
 interface ExternalLinkItemProps {
   href: string;
   label: string;
-  iconSrc: string;
   external: boolean;
+  iconKey: IconKey;
 }
 
-const ExternalLinkItem = ({ href, label, iconSrc, external }: ExternalLinkItemProps) => {
+const ExternalLinkItem = ({ href, label, external, iconKey }: ExternalLinkItemProps) => {
+  const Icon = ICON_BY_KEY[iconKey];
+
   return (
     <a
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
       aria-label={label}
+      className="inline-flex items-center text-slate-500 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
     >
-      <Image src={iconSrc} alt="" width={24} height={24} />
+      <Icon className="h-5 w-5" />
     </a>
   );
 };
