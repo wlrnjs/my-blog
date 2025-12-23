@@ -1,2 +1,2 @@
-export { default as Header } from "./header/ui/header";
-export { default as ExternalLinks } from "./ExternalLinks/ui/ExternalLinks";
+export { default as Header } from "./header/ui/Header";
+export { default as ExternalLinks } from "./external-links/ui/ExternalLinks";
