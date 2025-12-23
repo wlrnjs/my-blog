@@ -22,6 +22,32 @@ body.dark {
     background-color: rgba(255, 214, 0, 0.75);
     color: #000;
   }
+
+  .prose pre {
+    background-color: #0f172a;
+    color: #e5e7eb;
+  }
+
+  .dark .prose pre {
+    background-color: #111827;
+    color: #f9fafb;
+  }
+
+  .prose pre {
+    @apply p-0;
+  }
+
+  .prose pre code.hljs {
+    @apply block bg-transparent p-4;
+  }
+
+  .dark .prose pre {
+    @apply p-0;
+  }
+
+  .dark .prose pre code.hljs {
+    @apply block bg-transparent p-4;
+  }
 }
 
 @layer utilities {
