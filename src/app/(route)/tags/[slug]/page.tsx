@@ -1,6 +1,6 @@
 import { Article } from "@/shared/ui";
 
-const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
+const TagDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
 
   return (
@@ -10,4 +10,4 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   );
 };
 
-export default Page;
+export default TagDetailPage;

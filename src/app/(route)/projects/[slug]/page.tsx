@@ -1,6 +1,6 @@
 import { Article } from "@/shared/ui";
 
-const page = () => {
+const ProjectDetailPage = () => {
   return (
     <Article title="상세페이지" intro="프로젝트 상세페이지">
       <p>
@@ -12,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ProjectDetailPage;

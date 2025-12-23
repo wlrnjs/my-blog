@@ -1,7 +1,7 @@
 import { Article } from "@/shared/ui";
 import { ProjectList } from "@/entities/project/ui";
 
-const page = () => {
+const ProjectsPage = () => {
   return (
     <Article title="Projects">
       <ProjectList />
@@ -9,4 +9,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ProjectsPage;
