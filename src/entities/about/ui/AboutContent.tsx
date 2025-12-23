@@ -5,12 +5,12 @@ import EquipmentSection from "./EquipmentSection";
 const AboutContent = () => {
   return (
     <div className="space-y-5">
-      <AboutSection title="블로그를 하는 이유">
+      <AboutSection title="소개">
         <p>{ABOUT_REASON}</p>
       </AboutSection>
 
       <AboutSection title="관심 분야">
-        <ul className="list-inside list-disc space-y-1 text-sm">
+        <ul className="ml-2 list-inside list-disc space-y-1 text-sm">
           {ABOUT_INTERESTS.map((item) => (
             <li key={item}>{item}</li>
           ))}
