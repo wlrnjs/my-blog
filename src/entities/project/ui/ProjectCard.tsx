@@ -18,13 +18,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         featured && "border-indigo-500 dark:border-indigo-400"
       )}
     >
-      <div className="mb-3 flex h-[140px] items-center justify-center rounded-md bg-slate-100 dark:bg-slate-900">
+      <div className="relative mb-3 h-[140px] overflow-hidden">
         <Image
           src={thumbnail.src}
           alt={thumbnail.alt}
-          width={80}
-          height={80}
-          className="object-contain"
+          fill
+          quality={100}
+          draggable={false}
+          priority
+          className="rounded-md object-contain"
         />
       </div>
 

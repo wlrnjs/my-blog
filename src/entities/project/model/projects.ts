@@ -13,7 +13,7 @@ export const PROJECTS: readonly Project[] = [
       "React Testing Library",
       "Playwright",
     ],
-    thumbnail: { src: "/projects/logo-2.png", alt: "Project 1 thumbnail" },
+    thumbnail: { src: "/projects/find-my-item.ico", alt: "Project 1 thumbnail" },
     period: "2025.09 - 진행중",
     featured: true,
   },
@@ -22,7 +22,7 @@ export const PROJECTS: readonly Project[] = [
     title: "PlayHive",
     summary: "Project 2 description",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "DOMPurify"],
-    thumbnail: { src: "/projects/logo-2.png", alt: "Project 2 thumbnail" },
+    thumbnail: { src: "/projects/PlayHive.png", alt: "Project 2 thumbnail" },
     period: "2025.01 - 2025.07",
   },
   {
@@ -30,7 +30,7 @@ export const PROJECTS: readonly Project[] = [
     title: "Frame",
     summary: "Project 3 description",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    thumbnail: { src: "/projects/logo-2.png", alt: "Project 3 thumbnail" },
+    thumbnail: { src: "/projects/Frame.png", alt: "Project 3 thumbnail" },
     period: "2025.04 - 미완성",
   },
   {
@@ -38,7 +38,7 @@ export const PROJECTS: readonly Project[] = [
     title: "Rolling",
     summary: "Project 4 description",
     techStack: ["React", "Tailwind CSS"],
-    thumbnail: { src: "/projects/logo-2.png", alt: "Project 4 thumbnail" },
+    thumbnail: { src: "/projects/Rolling.png", alt: "Project 4 thumbnail" },
     period: "2025.08 - 2025.08",
   },
   {
@@ -46,7 +46,7 @@ export const PROJECTS: readonly Project[] = [
     title: "WHYNE",
     summary: "Project 5 description",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Storybook", "OpenAI-API"],
-    thumbnail: { src: "/projects/logo-2.png", alt: "Project 5 thumbnail" },
+    thumbnail: { src: "/projects/WHYNE.jpg", alt: "Project 5 thumbnail" },
     period: "2025.09 - 2025.10",
   },
   {
@@ -54,7 +54,7 @@ export const PROJECTS: readonly Project[] = [
     title: "Coworkers",
     summary: "Project 6 description",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Storybook", "React-pdf"],
-    thumbnail: { src: "/projects/logo-2.png", alt: "Project 6 thumbnail" },
+    thumbnail: { src: "/projects/Coworkers.png", alt: "Project 6 thumbnail" },
     period: "2025.11 - 2025.12",
   },
 ];
