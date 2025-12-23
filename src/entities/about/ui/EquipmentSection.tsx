@@ -1,4 +1,4 @@
-import { EQUIPMENT } from "../model/constants";
+import { EQUIPMENT } from "../model/ABOUT";
 import AboutSections from "./AboutSection";
 
 interface EquipmentItem {

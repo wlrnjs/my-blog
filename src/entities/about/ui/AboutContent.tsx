@@ -1,4 +1,4 @@
-import { ABOUT_INTERESTS, ABOUT_REASON, ABOUT_STYLE } from "../model/constants";
+import { ABOUT_INTERESTS, ABOUT_REASON, ABOUT_STYLE } from "../model/ABOUT";
 import AboutSection from "./AboutSection";
 import EquipmentSection from "./EquipmentSection";
 
