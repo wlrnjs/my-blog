@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import { Article } from "@/shared/ui";
+import { ExternalLinks } from "@/widgets";
+import { AboutContent } from "@/entities/about/ui";
 
 export const metadata: Metadata = {
   title: "About",
@@ -9,7 +11,8 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <Article title="About">
-      <p>페이지 공사중...</p>
+      <AboutContent />
+      <ExternalLinks />
     </Article>
   );
 };
