@@ -1,13 +1,13 @@
 import { Article } from "@/shared/ui";
+import { PROJECT_MAP } from "@/entities/project/model";
 
-const ProjectDetailPage = () => {
+const ProjectDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
+  const project = PROJECT_MAP[slug as keyof typeof PROJECT_MAP];
+
   return (
-    <Article title="상세페이지" intro="프로젝트 상세페이지">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda voluptate rem
-        soluta minima enim, modi libero eius. Natus commodi modi aut molestiae ad. Dicta neque
-        ducimus obcaecati in veritatis?
-      </p>
+    <Article title={project?.title || slug}>
+      <h2>상세페이지 공사중..</h2>
     </Article>
   );
 };

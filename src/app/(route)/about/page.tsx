@@ -9,10 +9,7 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <Article title="About">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur sed animi
-        laborum praesentium facilis!
-      </p>
+      <p>페이지 공사중...</p>
     </Article>
   );
 };
