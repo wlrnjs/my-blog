@@ -1,0 +1,15 @@
+.prose pre {
+  @apply p-0;
+}
+
+.prose pre code.hljs {
+  @apply block bg-transparent p-4;
+}
+
+.dark .prose pre {
+  @apply p-0;
+}
+
+.dark .prose pre code.hljs {
+  @apply block bg-transparent p-4;
+}

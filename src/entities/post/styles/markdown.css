@@ -1,0 +1,7 @@
+.prose pre {
+  @apply bg-slate-900 text-slate-200;
+}
+
+.dark .prose pre {
+  @apply bg-gray-900 text-gray-50;
+}
