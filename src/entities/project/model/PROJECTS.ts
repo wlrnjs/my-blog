@@ -1,0 +1,60 @@
+import { Project } from "./types";
+
+export const PROJECTS: readonly Project[] = [
+  {
+    slug: "find-my-item",
+    title: "찾아줘!",
+    summary: "Project 1 description",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Jest",
+      "React Testing Library",
+      "Playwright",
+    ],
+    thumbnail: { src: "/projects/logo-2.png", alt: "Project 1 thumbnail" },
+    period: "2025.09 - 진행중",
+    featured: true,
+  },
+  {
+    slug: "playhive",
+    title: "PlayHive",
+    summary: "Project 2 description",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "DOMPurify"],
+    thumbnail: { src: "/projects/logo-2.png", alt: "Project 2 thumbnail" },
+    period: "2025.01 - 2025.07",
+  },
+  {
+    slug: "frame",
+    title: "Frame",
+    summary: "Project 3 description",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    thumbnail: { src: "/projects/logo-2.png", alt: "Project 3 thumbnail" },
+    period: "2025.04 - 미완성",
+  },
+  {
+    slug: "rolling",
+    title: "Rolling",
+    summary: "Project 4 description",
+    techStack: ["React", "Tailwind CSS"],
+    thumbnail: { src: "/projects/logo-2.png", alt: "Project 4 thumbnail" },
+    period: "2025.08 - 2025.08",
+  },
+  {
+    slug: "whyne",
+    title: "WHYNE",
+    summary: "Project 5 description",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Storybook", "OpenAI-API"],
+    thumbnail: { src: "/projects/logo-2.png", alt: "Project 5 thumbnail" },
+    period: "2025.09 - 2025.10",
+  },
+  {
+    slug: "coworkers",
+    title: "Coworkers",
+    summary: "Project 6 description",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Storybook", "React-pdf"],
+    thumbnail: { src: "/projects/logo-2.png", alt: "Project 6 thumbnail" },
+    period: "2025.11 - 2025.12",
+  },
+];

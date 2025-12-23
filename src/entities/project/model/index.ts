@@ -1,2 +1,2 @@
 export * from "./types";
-export { PROJECTS } from "./projects";
+export { PROJECTS } from "./PROJECTS";
