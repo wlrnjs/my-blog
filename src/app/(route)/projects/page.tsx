@@ -3,7 +3,7 @@ import { ProjectList } from "@/entities/project/ui";
 
 const page = () => {
   return (
-    <Article title="Projects" intro="My Projects">
+    <Article title="Projects">
       <ProjectList />
     </Article>
   );
