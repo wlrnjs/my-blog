@@ -21,7 +21,7 @@ const HeaderNav = () => {
             className={cn(
               "inline-flex items-center text-sm font-medium",
               "transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90",
-              isActive && "-translate-y-0.5 font-bold"
+              isActive && "translate-y-0.5 font-bold"
             )}
           >
             {item.label}
