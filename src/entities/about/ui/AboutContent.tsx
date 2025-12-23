@@ -1,6 +1,7 @@
 import { ABOUT_INTERESTS, ABOUT_REASON, ABOUT_STYLE } from "../model/ABOUT";
 import AboutSection from "./AboutSection";
 import EquipmentSection from "./EquipmentSection";
+import CommitGraphSection from "./CommitGraphSection";
 
 const AboutContent = () => {
   return (
@@ -22,6 +23,8 @@ const AboutContent = () => {
       </AboutSection>
 
       <EquipmentSection />
+
+      <CommitGraphSection />
     </div>
   );
 };
