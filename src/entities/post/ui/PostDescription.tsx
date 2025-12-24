@@ -19,7 +19,7 @@ interface PostDescriptionProps {
 const PostDescription = ({ post }: PostDescriptionProps) => {
   return (
     post.description && (
-      <section className="prose max-w-none dark:prose-invert">
+      <article aria-label="게시물 내용" className="prose max-w-none dark:prose-invert">
         <ReactMarkdown
           remarkPlugins={[remarkGfm, remarkBreaks]}
           rehypePlugins={[
@@ -37,7 +37,7 @@ const PostDescription = ({ post }: PostDescriptionProps) => {
         >
           {post.description}
         </ReactMarkdown>
-      </section>
+      </article>
     )
   );
 };
