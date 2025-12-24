@@ -28,13 +28,13 @@ const ExternalLinks = () => {
   return (
     <>
       <hr className="mt-8" />
-      <section className="mt-8 flex justify-end">
-        <div className="flex items-center gap-2">
+      <footer className="mt-8 flex justify-end">
+        <nav aria-label="외부 링크" className="flex items-center gap-2">
           {EXTERNAL_LINKS.map((item) => (
             <ExternalLinkItem key={item.label} {...item} />
           ))}
-        </div>
-      </section>
+        </nav>
+      </footer>
     </>
   );
 };

@@ -8,13 +8,16 @@ const PostItem = ({ post }: { post: Post }) => {
       <Link href={`/posts/${post.slug}`} className="block">
         <div className="flex gap-6">
           <div className="w-[92px] shrink-0 pt-0.5">
-            <div className="text-xs font-medium text-slate-500 dark:text-slate-400">
+            <time
+              dateTime={post.published_at}
+              className="text-xs font-medium text-slate-500 dark:text-slate-400"
+            >
               {formatDateKoreanYMD(post.published_at)}
-            </div>
+            </time>
           </div>
 
           <div className="min-w-0">
-            <h3 className="text-[17px] font-semibold tracking-[-0.01em] text-slate-900 dark:text-slate-100">
+            <h2 className="text-[17px] font-semibold tracking-[-0.01em] text-slate-900 dark:text-slate-100">
               <span
                 className={cn(
                   "bg-gradient-to-r from-slate-900 to-slate-900 bg-[length:0%_2px] bg-left-bottom bg-no-repeat pb-1",
@@ -23,7 +26,7 @@ const PostItem = ({ post }: { post: Post }) => {
               >
                 {post.title}
               </span>
-            </h3>
+            </h2>
 
             <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
               {post.description}
