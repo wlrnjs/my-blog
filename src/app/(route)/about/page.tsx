@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Article } from "@/shared/ui";
-import { ExternalLinks } from "@/widgets";
+import { ExternalLinks, SnowScript } from "@/widgets";
 import { AboutContent } from "@/entities/about/ui";
 
 export const metadata: Metadata = {
@@ -10,10 +10,14 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
   return (
-    <Article title="About">
-      <AboutContent />
-      <ExternalLinks />
-    </Article>
+    <>
+      <SnowScript />
+
+      <Article title="About">
+        <AboutContent />
+        <ExternalLinks />
+      </Article>
+    </>
   );
 };
 
