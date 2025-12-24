@@ -7,3 +7,4 @@ export { getPostsByTag } from "./posts.getByTag";
 export { getAllTags } from "./tags.getAll";
 export { getPostsByTagSlug } from "./posts.getByTagSlug";
 export { getPostsByCategorySlug } from "./posts.getByCategorySlug";
+export { getPostWithPrevNext } from "./posts.getPostWithPrevNext";

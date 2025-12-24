@@ -1,12 +1,7 @@
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkBreaks from "remark-breaks";
-import rehypeHighlight from "rehype-highlight";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { Article } from "@/shared/ui";
-import { getPostBySlug } from "@/entities/post/api";
+import { getPostWithPrevNext } from "@/entities/post/api";
+import { PostDescription, PostNav } from "@/entities/post/ui";
 
 import "highlight.js/styles/github-dark.css";
 import "@/entities/post/styles/markdown.css";
@@ -19,33 +14,16 @@ interface PostProps {
 
 export default async function PostPage({ params }: PostProps) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const result = await getPostWithPrevNext(slug);
 
-  if (!post) notFound();
+  if (!result) notFound();
+
+  const { post, prev, next } = result;
 
   return (
     <Article title="Blog" intro={post.title}>
-      {post.description && (
-        <article className="prose max-w-none dark:prose-invert">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm, remarkBreaks]}
-            rehypePlugins={[
-              rehypeHighlight,
-              rehypeSlug,
-              [
-                rehypeAutolinkHeadings,
-                {
-                  behavior: "append",
-                  properties: { className: ["heading-anchor"] },
-                  content: [{ type: "text", value: "#" }],
-                },
-              ],
-            ]}
-          >
-            {post.description}
-          </ReactMarkdown>
-        </article>
-      )}
+      <PostDescription post={post} />
+      <PostNav prev={prev} next={next} />
     </Article>
   );
 }
