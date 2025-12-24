@@ -1,6 +1,6 @@
-import { Article, PostItem } from "@/shared/ui";
+import { Article } from "@/shared/ui";
+import { TagDetailList } from "@/entities/tag/ui";
 import { getPostsByTagSlug } from "@/entities/post/api";
-import PostListEmpty from "@/shared/ui/post-list-empty/PostListEmpty";
 
 const TagDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
@@ -8,13 +8,7 @@ const TagDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) 
 
   return (
     <Article title={`#${slug}`}>
-      <ul>
-        {posts.length === 0 ? (
-          <PostListEmpty />
-        ) : (
-          posts.map((item) => <PostItem key={item.id} post={item} />)
-        )}
-      </ul>
+      <TagDetailList posts={posts} />
     </Article>
   );
 };
