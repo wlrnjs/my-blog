@@ -1,5 +1,5 @@
+import { PostList } from "@/widgets";
 import { Article } from "@/shared/ui";
-import { TagDetailList } from "@/entities/tag/ui";
 import { getPostsByTagSlug } from "@/entities/post/api";
 
 const TagDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -8,7 +8,7 @@ const TagDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) 
 
   return (
     <Article title={`#${slug}`}>
-      <TagDetailList posts={posts} />
+      <PostList posts={posts} />
     </Article>
   );
 };

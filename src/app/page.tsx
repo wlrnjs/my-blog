@@ -1,7 +1,10 @@
-import { PostList } from "@/entities/post/ui";
+import { PostList } from "@/widgets";
+import { getAllPosts } from "@/entities/post/api";
 
-const Home = () => {
-  return <PostList />;
+const Home = async () => {
+  const posts = await getAllPosts();
+
+  return <PostList posts={posts} />;
 };
 
 export default Home;

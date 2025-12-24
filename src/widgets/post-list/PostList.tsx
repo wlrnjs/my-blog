@@ -1,7 +1,7 @@
 import { Post } from "@/shared/supabase/supabase";
 import { PostEmpty, PostItem } from "@/shared/ui";
 
-const TagDetailList = ({ posts }: { posts: Post[] }) => {
+const PostList = ({ posts }: { posts: Post[] }) => {
   return (
     <ul>
       {posts.length === 0 ? (
@@ -13,4 +13,4 @@ const TagDetailList = ({ posts }: { posts: Post[] }) => {
   );
 };
 
-export default TagDetailList;
+export default PostList;
