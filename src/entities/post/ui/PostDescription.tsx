@@ -5,6 +5,11 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
+import "highlight.js/styles/github-dark.css";
+import "@/entities/post/styles/markdown.css";
+import "@/entities/post/styles/highlight.css";
+import "@/entities/post/styles/markdown-anchor.css";
+
 interface PostDescriptionProps {
   post: {
     description?: string;

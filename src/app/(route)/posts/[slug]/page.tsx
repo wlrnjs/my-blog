@@ -3,11 +3,6 @@ import { Article } from "@/shared/ui";
 import { getPostWithPrevNext } from "@/entities/post/api";
 import { PostDescription, PostNav } from "@/entities/post/ui";
 
-import "highlight.js/styles/github-dark.css";
-import "@/entities/post/styles/markdown.css";
-import "@/entities/post/styles/highlight.css";
-import "@/entities/post/styles/markdown-anchor.css";
-
 interface PostProps {
   params: Promise<{ slug: string }>;
 }
