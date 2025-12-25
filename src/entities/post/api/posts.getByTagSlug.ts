@@ -1,13 +1,22 @@
 import { Post, supabase } from "@/shared/supabase/supabase";
 
-export async function getPostsByTagSlug(tagSlug: string): Promise<Post[]> {
+type TagInfo = {
+  slug: string;
+  display_name: string | null;
+};
+
+export async function getPostsByTagSlug(
+  tagSlug: string
+): Promise<{ posts: Post[]; tag: TagInfo | null }> {
   const { data, error } = await supabase
     .from("posts")
     .select(
       `*,
       post_tags!inner(
-        tag_id,
-        tags!inner(slug)
+        tags!inner(
+          slug,
+          display_name
+        )
       )`
     )
     .eq("status", "published")
@@ -16,8 +25,12 @@ export async function getPostsByTagSlug(tagSlug: string): Promise<Post[]> {
 
   if (error) {
     console.error("Error fetching posts by tag slug:", error);
-    return [];
+    return { posts: [], tag: null };
   }
 
-  return (data ?? []) as unknown as Post[];
+  const posts = (data ?? []) as unknown as Post[];
+
+  const tag = (data?.[0] as any)?.post_tags?.[0]?.tags ?? null;
+
+  return { posts, tag };
 }
