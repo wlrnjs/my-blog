@@ -28,7 +28,7 @@ export const metadata = {
       "프론트엔드 개발 과정에서 마주한 문제와 해결 과정을 기록하는 개인 기술 블로그입니다.",
     images: [
       {
-        url: "/og-default.png",
+        url: "/metadata/og-default.png",
         width: 1200,
         height: 630,
         alt: "개발 블로그",
