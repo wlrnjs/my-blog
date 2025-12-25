@@ -6,15 +6,22 @@ interface AboutSectionProps {
   title: string;
   children: ReactNode;
   className?: ClassNameValue;
+  muted?: boolean;
 }
 
-const AboutSection = ({ title, children, className }: AboutSectionProps) => {
+const AboutSection = ({ title, children, className, muted = true }: AboutSectionProps) => {
   return (
     <section className="space-y-3">
       <h2 className="text-lg font-semibold tracking-tight" id={title}>
         {title}
       </h2>
-      <div className={cn("text-sm leading-relaxed text-slate-600 dark:text-slate-300", className)}>
+      <div
+        className={cn(
+          "text-sm leading-relaxed",
+          className,
+          muted && "text-slate-600 dark:text-slate-300"
+        )}
+      >
         {children}
       </div>
     </section>
