@@ -10,8 +10,31 @@ import { ThemeProvider } from "./providers/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "지권",
-  description: "지권 블로그",
+  metadataBase: new URL("https://www.wlrnjs.xyz"),
+  title: {
+    default: "지권 | 프론트엔드 개발 블로그",
+    template: "%s | 지권",
+  },
+  description:
+    "프론트엔드 개발 과정에서 마주한 문제와 해결 과정을 기록하는 개인 기술 블로그입니다.",
+  openGraph: {
+    siteName: "지권",
+    type: "website",
+    title: {
+      default: "지권 | 프론트엔드 개발 블로그",
+      template: "%s | 지권",
+    },
+    description:
+      "프론트엔드 개발 과정에서 마주한 문제와 해결 과정을 기록하는 개인 기술 블로그입니다.",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "개발 블로그",
+      },
+    ],
+  },
 };
 
 interface RootLayoutProps {
