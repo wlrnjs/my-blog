@@ -12,13 +12,13 @@ import "@/entities/post/styles/markdown-anchor.css";
 
 interface PostDescriptionProps {
   post: {
-    description?: string;
+    content?: string;
   };
 }
 
 const PostDescription = ({ post }: PostDescriptionProps) => {
   return (
-    post.description && (
+    post.content && (
       <article aria-label="게시물 내용" className="prose max-w-none dark:prose-invert">
         <ReactMarkdown
           remarkPlugins={[remarkGfm, remarkBreaks]}
@@ -35,7 +35,7 @@ const PostDescription = ({ post }: PostDescriptionProps) => {
             ],
           ]}
         >
-          {post.description}
+          {post.content}
         </ReactMarkdown>
       </article>
     )
