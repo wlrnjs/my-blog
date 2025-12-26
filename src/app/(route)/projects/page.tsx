@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: "Projects",
     description: "진행한 프로젝트를 한눈에 볼 수 있습니다.",
     url: "/projects",
+    images: [
+      {
+        url: "/metadata/og-projects.png",
+        width: 1200,
+        height: 630,
+        alt: "프로젝트 페이지",
+      },
+    ],
   },
   alternates: {
     canonical: "/projects",
