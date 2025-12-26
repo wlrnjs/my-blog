@@ -5,7 +5,15 @@ import { AboutContent } from "@/entities/about/ui";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "About the site",
+  description: "프론트엔드 개발자로서의 경험과 방향을 정리했습니다.",
+  openGraph: {
+    title: "About",
+    description: "프론트엔드 개발자로서의 경험과 방향을 정리했습니다.",
+    url: "/about",
+  },
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const AboutPage = () => {
