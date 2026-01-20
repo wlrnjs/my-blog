@@ -21,7 +21,13 @@ export default async function PostPage({ params }: PostProps) {
 
   return (
     <Article title="Blog" intro={post.title}>
-      <PostMeta publishedAt={post.published_at} tags={post.tags || []} />
+      <PostMeta
+        tags={post.tags || []}
+        data={{
+          publishedAt: post.published_at,
+          readingTime: post.reading_time || 0,
+        }}
+      />
       <PostDescription post={post} />
       <PostNav prev={prev} next={next} />
       <RelatedPosts posts={relatedPosts} />
