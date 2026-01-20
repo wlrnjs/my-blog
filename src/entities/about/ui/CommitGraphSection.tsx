@@ -8,7 +8,7 @@ const CommitGraphSection = () => {
         loading="lazy"
         decoding="async"
         aria-hidden="true"
-        className="w-full max-w-[720px] rounded-md opacity-90 transition-opacity hover:opacity-100"
+        className="w-full max-w-full rounded-md opacity-80 transition-opacity hover:opacity-100"
       />
     </section>
   );
