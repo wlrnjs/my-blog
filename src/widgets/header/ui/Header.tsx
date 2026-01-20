@@ -12,7 +12,10 @@ const HeaderNav = () => {
   return (
     <nav className="ml-auto space-x-6 text-sm font-medium">
       {NAV_ITEMS.map((item) => {
-        const isActive = pathname === item.href;
+        const isActive =
+          item.href === "/"
+            ? pathname === "/"
+            : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
         return (
           <Link

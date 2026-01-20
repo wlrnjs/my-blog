@@ -7,7 +7,7 @@ const AboutContent = () => {
   return (
     <div className="space-y-5">
       <AboutSection title="소개" muted={false}>
-        <p>{ABOUT_REASON}</p>
+        <p className="whitespace-pre-line">{ABOUT_REASON}</p>
       </AboutSection>
 
       <AboutSection title="관심 분야" muted={false}>
@@ -19,7 +19,7 @@ const AboutContent = () => {
       </AboutSection>
 
       <AboutSection title="개발 스타일 / 가치관" muted={false}>
-        <p>{ABOUT_STYLE}</p>
+        <p className="whitespace-pre-line">{ABOUT_STYLE}</p>
       </AboutSection>
 
       <EquipmentSection />
