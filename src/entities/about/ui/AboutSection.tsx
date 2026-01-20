@@ -11,15 +11,15 @@ interface AboutSectionProps {
 
 const AboutSection = ({ title, children, className, muted = true }: AboutSectionProps) => {
   return (
-    <section className="space-y-3">
+    <section className="space-y-2">
       <h2 className="text-lg font-semibold tracking-tight" id={title}>
         {title}
       </h2>
       <div
         className={cn(
-          "text-sm leading-relaxed",
+          "text-base leading-relaxed",
           className,
-          muted && "text-slate-600 dark:text-slate-300"
+          muted && "text-neutral-900 dark:text-neutral-600"
         )}
       >
         {children}
