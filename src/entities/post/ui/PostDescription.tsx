@@ -4,6 +4,7 @@ import remarkBreaks from "remark-breaks";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeRaw from "rehype-raw";
 
 import "highlight.js/styles/github-dark.css";
 import "@/entities/post/styles/markdown.css";
@@ -23,6 +24,7 @@ const PostDescription = ({ post }: PostDescriptionProps) => {
         <ReactMarkdown
           remarkPlugins={[remarkGfm, remarkBreaks]}
           rehypePlugins={[
+            rehypeRaw,
             rehypeHighlight,
             rehypeSlug,
             [
