@@ -30,7 +30,7 @@ export async function getRelatedPostsByTagSlug({
     .limit(limit);
 
   if (error) {
-    console.error("Error fetching related posts:", error);
+    console.error("관련 포스트 목록을 불러오는 중 오류가 발생했습니다:", error);
     return [];
   }
 

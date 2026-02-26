@@ -7,7 +7,7 @@ export async function getAllCategories(): Promise<Category[]> {
     .order("name", { ascending: true });
 
   if (error) {
-    console.error("Error fetching categories:", error);
+    console.error("카테고리 목록을 불러오는 중 오류가 발생했습니다:", error);
     return [];
   }
 

@@ -9,7 +9,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     .single();
 
   if (error) {
-    console.error("Error fetching post:", error);
+    console.error("포스트를 불러오는 중 오류가 발생했습니다:", error);
     return null;
   }
 
