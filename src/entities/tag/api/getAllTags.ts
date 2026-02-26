@@ -8,7 +8,7 @@ export async function getAllTags(): Promise<Tag[]> {
     .order("name", { ascending: true });
 
   if (error) {
-    console.error("Error fetching tags:", error);
+    console.error("태그 목록을 불러오는 중 오류가 발생했습니다:", error);
     return [];
   }
 

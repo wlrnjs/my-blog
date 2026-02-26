@@ -15,7 +15,7 @@ export async function getPostsByCategorySlug(categorySlug: string): Promise<Post
     .order("published_at", { ascending: false });
 
   if (error) {
-    console.error("Error fetching posts by category slug:", error);
+    console.error("카테고리 슬러그로 포스트 목록을 불러오는 중 오류가 발생했습니다:", error);
     return [];
   }
 
