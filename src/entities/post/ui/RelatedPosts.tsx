@@ -42,6 +42,7 @@ const PostCard = ({ post, hrefBase }: { post: PostCardItem; hrefBase: string }) 
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
               width={1200}
               height={675}
+              sizes="(max-width: 768px) 100vw, 450px"
               loading="lazy"
             />
             <div className="from-black/45 pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t to-transparent" />
