@@ -23,7 +23,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           src={thumbnail.src}
           alt={thumbnail.alt}
           fill
-          quality={100}
+          sizes="(max-width: 768px) 100vw, 450px"
           draggable={false}
           priority
           className="rounded-md object-contain"
