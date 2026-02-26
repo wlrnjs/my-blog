@@ -13,7 +13,7 @@ export async function getTagBySlug(tagSlug: string): Promise<TagInfo | null> {
     .maybeSingle();
 
   if (error) {
-    console.error("Error fetching tag by slug:", error);
+    console.error("태그 슬러그로 태그 정보를 불러오는 중 오류가 발생했습니다:", error);
     return null;
   }
 

@@ -1,3 +1,3 @@
-export { getAllTags } from "./tags.getAll";
-export { getAllTagsWithCount } from "./tags.getAllWithCount";
-export { getTagBySlug } from "./tags.getTagBySlug";
+export { getAllTags } from "./getAllTags";
+export { getAllTagsWithCount } from "./getAllTagsWithCount";
+export { getTagBySlug } from "./getTagBySlug";

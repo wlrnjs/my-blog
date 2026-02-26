@@ -1,1 +1,1 @@
-export { getAllCategories } from "./categories.getAll";
+export { getAllCategories } from "./getAllCategories";

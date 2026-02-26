@@ -18,7 +18,7 @@ export async function getPostWithPrevNext(slug: string): Promise<PostWithPrevNex
   });
 
   if (error || !data?.post) {
-    console.error("Error fetching post with nav:", error);
+    console.error("이전/다음 포스트 정보를 포함하여 포스트를 불러오는 중 오류가 발생했습니다:", error);
     return null;
   }
 

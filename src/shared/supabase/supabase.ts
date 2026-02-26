@@ -5,7 +5,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-// Types for our database
+// 데이터베이스 타입 정의
 export interface Post {
   id: string;
   slug: string;
@@ -55,7 +55,7 @@ export interface PostCategory {
   category_id: string;
 }
 
-// Database response types
+// 데이터베이스 응답 타입
 export interface PostWithCategories extends Post {
   categories?: Category[];
 }
