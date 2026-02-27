@@ -5,6 +5,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeRaw from "rehype-raw";
+import rehypeSanitize from "rehype-sanitize";
 
 import "highlight.js/styles/github-dark.css";
 import "@/entities/post/styles/markdown.css";
@@ -25,6 +26,7 @@ const PostDescription = ({ post }: PostDescriptionProps) => {
           remarkPlugins={[remarkGfm, remarkBreaks]}
           rehypePlugins={[
             rehypeRaw,
+            rehypeSanitize,
             rehypeHighlight,
             rehypeSlug,
             [
