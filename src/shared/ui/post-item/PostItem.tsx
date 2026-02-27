@@ -2,7 +2,12 @@ import Link from "next/link";
 import { Post } from "@/shared/supabase/supabase";
 import { cn, formatDateKoreanYMD } from "@/shared/lib";
 
-const PostItem = ({ post }: { post: Post }) => {
+export type PostSummary = Pick<
+  Post,
+  "id" | "slug" | "title" | "description" | "published_at"
+>;
+
+const PostItem = ({ post }: { post: PostSummary }) => {
   return (
     <li className="group border-b border-slate-200/70 py-5 last:border-b-0 dark:border-slate-800/70">
       <Link href={`/posts/${post.slug}`} className="block">
