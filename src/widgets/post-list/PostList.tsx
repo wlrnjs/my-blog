@@ -1,7 +1,7 @@
-import { Post } from "@/shared/supabase/supabase";
+import { PostSummary } from "@/shared/ui";
 import { PostEmpty, PostItem } from "@/shared/ui";
 
-const PostList = ({ posts }: { posts: Post[] }) => {
+const PostList = ({ posts }: { posts: PostSummary[] }) => {
   return (
     <ul>
       {posts.length === 0 ? (

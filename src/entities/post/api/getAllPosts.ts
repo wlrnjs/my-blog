@@ -1,9 +1,11 @@
 import { Post, supabase } from "@/shared/supabase/supabase";
 
-export async function getAllPosts(): Promise<Post[]> {
+export async function getAllPosts(): Promise<
+  Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[]
+> {
   const { data, error } = await supabase
     .from("posts")
-    .select("*")
+    .select("id, slug, title, description, published_at")
     .eq("status", "published")
     .order("published_at", { ascending: false });
 
