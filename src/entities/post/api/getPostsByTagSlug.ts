@@ -13,11 +13,11 @@ interface PostWithTags extends Post {
 
 export async function getPostsByTagSlug(
   tagSlug: string
-): Promise<{ posts: Post[]; tag: TagInfo | null }> {
+): Promise<{ posts: Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[]; tag: TagInfo | null }> {
   const { data, error } = await supabase
     .from("posts")
     .select(
-      `*,
+      `id, slug, title, description, published_at,
       post_tags!inner(
         tags!inner(
           slug,
@@ -34,7 +34,7 @@ export async function getPostsByTagSlug(
     return { posts: [], tag: null };
   }
 
-  const posts = (data ?? []) as unknown as Post[];
+  const posts = (data ?? []) as unknown as Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[];
 
   const firstPost = data?.[0] as unknown as PostWithTags | undefined;
   const tag = firstPost?.post_tags?.[0]?.tags ?? null;
