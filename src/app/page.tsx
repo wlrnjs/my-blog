@@ -5,8 +5,10 @@ import { getAllPosts } from "@/entities/post/api";
 export const dynamic = "force-dynamic";
 
 const Home = async () => {
-  const posts = await getAllPosts();
-  const tags = await getAllTagsWithCount();
+  const [posts, tags] = await Promise.all([
+    getAllPosts(),
+    getAllTagsWithCount(),
+  ]);
 
   return (
     <div className="mt-10 flex gap-10">
