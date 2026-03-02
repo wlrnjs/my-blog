@@ -7,3 +7,4 @@
 
 **Learning:** Using `select('*')` or similar wildcards in Supabase queries for lists (like `getPostsByTagSlug`) fetches the entire `content` column, which contains megabytes of markdown. This is a severe backend bottleneck that increases network transfer and Next.js RSC payload size.
 **Action:** Always use explicit column selections (e.g. `select('id, slug, title, description, published_at')`) for list views instead of `*` to exclude the `content` field.
+
