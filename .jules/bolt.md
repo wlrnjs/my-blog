@@ -1,0 +1,3 @@
+## 2024-03-06 - [Parallelize Supabase Queries in Server Components]
+ **Learning:** In Next.js `force-dynamic` server components, sequentially `await`-ing independent data fetching operations (like Supabase queries) blocks rendering and increases Time To First Byte (TTFB). This is a critical performance bottleneck specific to this codebase's architecture where independent data are frequently requested on page load.
+ **Action:** For Next.js `force-dynamic` server components, always parallelize independent async data fetching operations (such as Supabase queries) using `Promise.all` to prevent sequential fetching and minimize TTFB.
