@@ -5,8 +5,11 @@ import { getAllPosts } from "@/entities/post/api";
 export const dynamic = "force-dynamic";
 
 const Home = async () => {
-  const posts = await getAllPosts();
-  const tags = await getAllTagsWithCount();
+  // 병렬로 데이터를 패칭하여 Time To First Byte (TTFB) 개선
+  const [posts, tags] = await Promise.all([
+    getAllPosts(),
+    getAllTagsWithCount(),
+  ]);
 
   return (
     <div className="mt-10 flex gap-10">

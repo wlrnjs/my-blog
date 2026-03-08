@@ -1,0 +1,3 @@
+## 2024-05-19 - [Parallelizing Async Data Fetching in Next.js Server Components]
+**Learning:** Sequential `await` calls in Next.js Server Components, especially those marked with `export const dynamic = "force-dynamic";` like `src/app/page.tsx`, directly block the rendering thread and increase Time To First Byte (TTFB).
+**Action:** Always wrap independent async data fetching operations in `Promise.all` in Server Components to ensure they resolve concurrently.
