@@ -5,8 +5,14 @@ import { getAllPosts } from "@/entities/post/api";
 export const dynamic = "force-dynamic";
 
 const Home = async () => {
-  const posts = await getAllPosts();
-  const tags = await getAllTagsWithCount();
+  // ⚡ Bolt Optimization: Parallel Data Fetching
+  // 💡 What: Replaced sequential awaits with Promise.all
+  // 🎯 Why: 'force-dynamic' routes must wait for all fetches before rendering. Sequential fetches increase TTFB.
+  // 📊 Impact: Reduces total fetch time from (getAllPosts time + getAllTagsWithCount time) to MAX(getAllPosts time, getAllTagsWithCount time).
+  const [posts, tags] = await Promise.all([
+    getAllPosts(),
+    getAllTagsWithCount()
+  ]);
 
   return (
     <div className="mt-10 flex gap-10">
