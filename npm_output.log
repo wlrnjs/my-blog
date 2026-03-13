@@ -1,0 +1,56 @@
+$ next dev
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.0.2:3000
+
+ ✓ Starting...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ Ready in 659ms
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ○ Compiling / ...
+태그별 포스트 개수 정보를 불러오는 중 오류가 발생했습니다: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:14902:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async getAllTagsWithCount (/app/.next/dev/server/chunks/ssr/[root-of-the-server]__ac0624fa._.js:81:29)\n' +
+    '    at async Promise.all (index 1)\n' +
+    '    at async Home (/app/.next/dev/server/chunks/ssr/[root-of-the-server]__ac0624fa._.js:452:27)',
+  hint: '',
+  code: ''
+}
+포스트 목록을 불러오는 중 오류가 발생했습니다: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:14902:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async getPosts (/app/.next/dev/server/chunks/ssr/[root-of-the-server]__ac0624fa._.js:390:29)\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Home (/app/.next/dev/server/chunks/ssr/[root-of-the-server]__ac0624fa._.js:452:27)',
+  hint: '',
+  code: ''
+}
+ GET / 200 in 5.8s (compile: 5.1s, render: 674ms)
+태그별 포스트 개수 정보를 불러오는 중 오류가 발생했습니다: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:14902:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async getAllTagsWithCount (/app/.next/dev/server/chunks/ssr/[root-of-the-server]__ac0624fa._.js:81:29)\n' +
+    '    at async Promise.all (index 1)\n' +
+    '    at async Home (/app/.next/dev/server/chunks/ssr/[root-of-the-server]__ac0624fa._.js:452:27)',
+  hint: '',
+  code: ''
+}
+포스트 목록을 불러오는 중 오류가 발생했습니다: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:14902:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async getPosts (/app/.next/dev/server/chunks/ssr/[root-of-the-server]__ac0624fa._.js:390:29)\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Home (/app/.next/dev/server/chunks/ssr/[root-of-the-server]__ac0624fa._.js:452:27)',
+  hint: '',
+  code: ''
+}
+ GET / 200 in 107ms (compile: 6ms, render: 101ms)
