@@ -7,7 +7,6 @@ export const dynamic = "force-dynamic";
 const Home = async () => {
   const [posts, tags] = await Promise.all([getAllPosts(), getAllTagsWithCount()]);
 
-
   return (
     <div className="mt-10 flex gap-10">
       <PostList posts={posts} />
