@@ -1,10 +1,12 @@
 import { Post, supabase } from "@/shared/supabase/supabase";
 
-export async function getPostsByCategorySlug(categorySlug: string): Promise<Post[]> {
+export async function getPostsByCategorySlug(
+  categorySlug: string
+): Promise<Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[]> {
   const { data, error } = await supabase
     .from("posts")
     .select(
-      `*,
+      `id, slug, title, description, published_at,
       post_categories!inner(
         category_id,
         categories!inner(slug)
@@ -19,5 +21,5 @@ export async function getPostsByCategorySlug(categorySlug: string): Promise<Post
     return [];
   }
 
-  return (data ?? []) as unknown as Post[];
+  return (data ?? []) as unknown as Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[];
 }
