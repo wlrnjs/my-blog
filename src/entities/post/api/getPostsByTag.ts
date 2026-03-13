@@ -1,9 +1,11 @@
 import { Post, supabase } from "@/shared/supabase/supabase";
 
-export async function getPostsByTag(tag: string): Promise<Post[]> {
+export async function getPostsByTag(tag: string): Promise<
+  Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[]
+> {
   const { data, error } = await supabase
     .from("posts")
-    .select("*")
+    .select("id, slug, title, description, published_at")
     .eq("status", "published")
     .contains("tags", [tag])
     .order("published_at", { ascending: false });
@@ -13,5 +15,8 @@ export async function getPostsByTag(tag: string): Promise<Post[]> {
     return [];
   }
 
-  return data || [];
+  return (data as Pick<
+    Post,
+    "id" | "slug" | "title" | "description" | "published_at"
+  >[]) || [];
 }

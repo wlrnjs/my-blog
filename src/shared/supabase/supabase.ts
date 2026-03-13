@@ -56,7 +56,11 @@ export interface PostCategory {
 }
 
 // 데이터베이스 응답 타입
-export interface PostWithCategories extends Post {
+export interface PostWithCategories
+  extends Pick<
+    Post,
+    "id" | "slug" | "title" | "description" | "published_at"
+  > {
   categories?: Category[];
 }
 
