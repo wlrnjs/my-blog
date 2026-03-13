@@ -1,6 +1,10 @@
 import { Post, Category, PostWithCategories, supabase } from "@/shared/supabase/supabase";
 
-interface PostWithRawCategories extends Post {
+interface PostWithRawCategories
+  extends Pick<
+    Post,
+    "id" | "slug" | "title" | "description" | "published_at"
+  > {
   post_categories: { categories: Category }[];
 }
 
@@ -9,9 +13,9 @@ export async function getPostsWithCategories(): Promise<PostWithCategories[]> {
     .from("posts")
     .select(
       `
-      *,
+      id, slug, title, description, published_at,
       post_categories(
-        categories(*)
+        categories(id, name, slug, color)
       )
     `
     )
