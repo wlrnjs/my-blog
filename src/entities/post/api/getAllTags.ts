@@ -1,18 +1,13 @@
 import { supabase } from "@/shared/supabase/supabase";
 
 export async function getAllTags(): Promise<string[]> {
-  const { data, error } = await supabase
-    .from("posts")
-    .select("tags")
-    .eq("status", "published")
-    .not("tags", "is", null);
+  const { data, error } = await supabase.rpc("get_all_tags");
 
   if (error) {
     console.error("태그 목록을 불러오는 중 오류가 발생했습니다:", error);
     return [];
   }
 
-  // 모든 태그를 추출하고 평탄화한 후 중복을 제거합니다.
-  const allTags = data?.flatMap((post) => post.tags || []) || [];
-  return Array.from(new Set(allTags)).sort();
+  // RPC 반환 결과에서 태그 배열만 추출합니다.
+  return data?.map((row: any) => row.tag) || [];
 }
