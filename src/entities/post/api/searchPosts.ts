@@ -1,6 +1,8 @@
 import { supabase, SearchResult } from "@/shared/supabase/supabase";
 
 export async function searchPosts(query: string): Promise<SearchResult[]> {
+  if (!query) return [];
+
   const { data, error } = await supabase.rpc("search_posts", { query });
 
   if (error) {
