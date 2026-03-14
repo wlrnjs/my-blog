@@ -13,8 +13,11 @@ export const useInfiniteScroll = ({ initialPosts }: UseInfiniteScrollProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const fetchingRef = useRef(false);
 
   const loadMorePosts = async () => {
+    if (fetchingRef.current) return;
+    fetchingRef.current = true;
     setIsLoading(true);
     const nextPage = page + 1;
     try {
@@ -31,6 +34,7 @@ export const useInfiniteScroll = ({ initialPosts }: UseInfiniteScrollProps) => {
     } catch (error) {
       console.error("Failed to load more posts:", error);
     } finally {
+      fetchingRef.current = false;
       setIsLoading(false);
     }
   };
