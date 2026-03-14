@@ -1,13 +1,44 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Article } from "@/shared/ui";
-import { getPostWithPrevNext, getRelatedPostsByTagSlug } from "@/entities/post/api";
+import { SlugPageProps } from "@/shared/types";
+import { getPostBySlug, getPostWithPrevNext, getRelatedPostsByTagSlug } from "@/entities/post/api";
 import { PostDescription, PostMeta, PostNav, RelatedPosts } from "@/entities/post/ui";
 
-interface PostProps {
-  params: Promise<{ slug: string }>;
+export async function generateMetadata({ params }: SlugPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Not Found",
+      description: "페이지를 찾을 수 없습니다.",
+    };
+  }
+
+  const title = post.meta_title || post.title;
+  const description = post.meta_description || post.description || "";
+  const images = post.og_image ? [post.og_image] : post.featured_image ? [post.featured_image] : [];
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime: post.published_at,
+      authors: post.author ? [post.author] : [],
+      url: `/posts/${slug}`,
+      ...(images.length > 0 && { images }),
+    },
+    alternates: {
+      canonical: `/posts/${slug}`,
+    },
+  };
 }
 
-export default async function PostPage({ params }: PostProps) {
+export default async function PostPage({ params }: SlugPageProps) {
   const { slug } = await params;
   const result = await getPostWithPrevNext(slug);
 
