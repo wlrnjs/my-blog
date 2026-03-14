@@ -1,10 +1,6 @@
-import { Post, Category, PostWithCategories, supabase } from "@/shared/supabase/supabase";
+import { PostSummary, Category, PostWithCategories, supabase } from "@/shared/supabase/supabase";
 
-interface PostWithRawCategories
-  extends Pick<
-    Post,
-    "id" | "slug" | "title" | "description" | "published_at"
-  > {
+interface PostWithRawCategories extends PostSummary {
   post_categories: { categories: Category }[];
 }
 

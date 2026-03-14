@@ -1,8 +1,8 @@
-import { Post, supabase } from "@/shared/supabase/supabase";
+import { PostSummary, supabase } from "@/shared/supabase/supabase";
 
 export async function getPostsByCategorySlug(
   categorySlug: string
-): Promise<Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[]> {
+): Promise<PostSummary[]> {
   const { data, error } = await supabase
     .from("posts")
     .select(
@@ -21,5 +21,5 @@ export async function getPostsByCategorySlug(
     return [];
   }
 
-  return (data ?? []) as unknown as Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[];
+  return (data ?? []) as unknown as PostSummary[];
 }

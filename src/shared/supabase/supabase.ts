@@ -5,6 +5,12 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
+// 공통 포스트 요약 타입 (목록 조회 최적화용)
+export type PostSummary = Pick<
+  Post,
+  "id" | "slug" | "title" | "description" | "published_at"
+>;
+
 // 데이터베이스 타입 정의
 export interface Post {
   id: string;
@@ -56,11 +62,7 @@ export interface PostCategory {
 }
 
 // 데이터베이스 응답 타입
-export interface PostWithCategories
-  extends Pick<
-    Post,
-    "id" | "slug" | "title" | "description" | "published_at"
-  > {
+export interface PostWithCategories extends PostSummary {
   categories?: Category[];
 }
 
