@@ -1,11 +1,8 @@
 import Link from "next/link";
-import { Post } from "@/shared/supabase/supabase";
+import { PostSummary } from "@/shared/supabase/supabase";
 import { cn, formatDateKoreanYMD } from "@/shared/lib";
 
-export type PostSummary = Pick<
-  Post,
-  "id" | "slug" | "title" | "description" | "published_at"
->;
+export type { PostSummary };
 
 const PostItem = ({ post }: { post: PostSummary }) => {
   return (

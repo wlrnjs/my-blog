@@ -1,8 +1,6 @@
-import { Post, supabase } from "@/shared/supabase/supabase";
+import { PostSummary, supabase } from "@/shared/supabase/supabase";
 
-export async function getPostsByTag(tag: string): Promise<
-  Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[]
-> {
+export async function getPostsByTag(tag: string): Promise<PostSummary[]> {
   const { data, error } = await supabase
     .from("posts")
     .select("id, slug, title, description, published_at")
@@ -15,8 +13,5 @@ export async function getPostsByTag(tag: string): Promise<
     return [];
   }
 
-  return (data as Pick<
-    Post,
-    "id" | "slug" | "title" | "description" | "published_at"
-  >[]) || [];
+  return (data as PostSummary[]) || [];
 }
