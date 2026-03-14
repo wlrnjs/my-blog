@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: SlugPageProps): Promise<Metad
 
 const TagDetailPage = async ({ params }: SlugPageProps) => {
   const { slug } = await params;
-  const { posts, tag } = await getPostsByTagSlug(slug);
+  const { posts, tag } = await getPostsByTagSlug({ tagSlug: slug });
 
   const title = tag?.display_name ?? slug;
 
