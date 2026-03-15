@@ -10,6 +10,18 @@ interface TagWithCountRow {
 }
 
 export async function getAllTagsWithCount(): Promise<TagWithCount[]> {
+  if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+    return [
+      {
+        id: "1",
+        name: "React",
+        slug: "react",
+        description: "React 태그",
+        postCount: 5,
+      },
+    ];
+  }
+
   const { data, error } = await supabase
     .from("tags_with_post_count")
     .select("id,name,slug,description,post_count")
