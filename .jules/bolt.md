@@ -10,3 +10,7 @@
 ## 2024-05-24 - [Parallelize Data Fetching in Force-Dynamic Routes]
 **Learning:** `src/app/page.tsx` is explicitly marked as `force-dynamic`, meaning that data is fetched sequentially (waterfall) on every single request. This creates a significant TTFB performance bottleneck for pages with multiple async operations.
 **Action:** Use `Promise.all` to fetch independent data concurrently (e.g. `getAllPosts` and `getAllTagsWithCount`) instead of `await`ing them one by one in `force-dynamic` routes to significantly reduce Time To First Byte (TTFB).
+
+## 2025-03-02 - Next.js Image `priority` anti-pattern on lists
+**Learning:** Hardcoding `priority` on Next.js `<Image>` components within mapped arrays or lists defeats the purpose of priority loading by eagerly fetching all images regardless of viewport position. This can increase initial bandwidth usage and severely degrade Largest Contentful Paint (LCP) by competing with critical resources.
+**Action:** Always conditionally apply the `priority` prop to list items. Use indicators like `index === 0`, `isFirst`, or a specific data attribute like `featured` to ensure only above-the-fold images are prioritized.

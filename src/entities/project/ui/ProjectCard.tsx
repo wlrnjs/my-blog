@@ -19,13 +19,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       )}
     >
       <div className="relative mb-3 h-[140px] overflow-hidden">
+        {/* ⚡ Bolt: Conditionally apply priority loading to featured images only. */}
+        {/* This avoids aggressively loading all project images above the fold, */}
+        {/* conserving initial bandwidth and improving LCP. */}
         <Image
           src={thumbnail.src}
           alt={thumbnail.alt}
           fill
           sizes="(max-width: 768px) 100vw, 450px"
           draggable={false}
-          priority
+          priority={!!featured}
           className="rounded-md object-contain"
         />
       </div>
