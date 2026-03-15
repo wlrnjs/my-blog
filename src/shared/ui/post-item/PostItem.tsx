@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PostSummary } from "@/shared/supabase/supabase";
 import { cn, formatDateKoreanYMD } from "@/shared/lib";
-import { forwardRef } from "react";
+import { forwardRef, memo } from "react";
 
 export type { PostSummary };
 
@@ -47,4 +47,8 @@ const PostItem = forwardRef<HTMLLIElement, { post: PostSummary }>(
 );
 PostItem.displayName = "PostItem";
 
-export default PostItem;
+// ⚡ Bolt: Prevent unnecessary re-renders of previously loaded items during infinite scroll.
+// Since `post` references remain stable when new items are appended to the list,
+// `memo` ensures only newly added items or the item receiving the `ref` (last item) will render,
+// reducing re-renders for large lists by O(N).
+export default memo(PostItem);
