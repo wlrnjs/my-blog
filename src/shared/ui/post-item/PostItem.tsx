@@ -47,8 +47,4 @@ const PostItem = forwardRef<HTMLLIElement, { post: PostSummary }>(
 );
 PostItem.displayName = "PostItem";
 
-// ⚡ Bolt: Prevent unnecessary re-renders of previously loaded items during infinite scroll.
-// Since `post` references remain stable when new items are appended to the list,
-// `memo` ensures only newly added items or the item receiving the `ref` (last item) will render,
-// reducing re-renders for large lists by O(N).
 export default memo(PostItem);
