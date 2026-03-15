@@ -9,6 +9,18 @@ export async function getPosts({
 } = {}): Promise<
   Pick<Post, "id" | "slug" | "title" | "description" | "published_at">[]
 > {
+  if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+    return [
+      {
+        id: "1",
+        slug: "test-post",
+        title: "테스트 포스트",
+        description: "테스트 포스트 설명입니다.",
+        published_at: new Date().toISOString(),
+      },
+    ];
+  }
+
   const from = (page - 1) * limit;
   const to = from + limit - 1;
 
