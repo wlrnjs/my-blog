@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { supabase, Post } from "@/shared/supabase/supabase";
 
 type PostNav = {
@@ -12,7 +13,10 @@ type PostWithPrevNext = {
   next: PostNav | null;
 };
 
-export async function getPostWithPrevNext(slug: string): Promise<PostWithPrevNext | null> {
+// ⚡ Bolt: Wrap database query in React's cache() to deduplicate fetches during SSR
+// This prevents identical queries from running twice per request when called by
+// both generateMetadata and the Page component.
+export const getPostWithPrevNext = cache(async (slug: string): Promise<PostWithPrevNext | null> => {
   const { data, error } = await supabase.rpc("get_post_with_prev_next", {
     p_slug: slug,
   });
@@ -23,4 +27,4 @@ export async function getPostWithPrevNext(slug: string): Promise<PostWithPrevNex
   }
 
   return data as PostWithPrevNext;
-}
+});
