@@ -1,4 +1,5 @@
 import { supabase, Post } from "@/shared/supabase/supabase";
+import { cache } from "react";
 
 type PostNav = {
   id: string;
@@ -12,7 +13,8 @@ type PostWithPrevNext = {
   next: PostNav | null;
 };
 
-export async function getPostWithPrevNext(slug: string): Promise<PostWithPrevNext | null> {
+// ⚡ Bolt: React cache()를 적용하여 요청 내 중복 호출 시 DB 조회를 방지
+export const getPostWithPrevNext = cache(async (slug: string): Promise<PostWithPrevNext | null> => {
   const { data, error } = await supabase.rpc("get_post_with_prev_next", {
     p_slug: slug,
   });
@@ -23,4 +25,4 @@ export async function getPostWithPrevNext(slug: string): Promise<PostWithPrevNex
   }
 
   return data as PostWithPrevNext;
-}
+});

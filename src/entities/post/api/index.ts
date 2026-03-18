@@ -1,5 +1,6 @@
 export { getAllPosts } from "./getAllPosts";
 export { getPostBySlug } from "./getPostBySlug";
+export { getPostMetadataBySlug } from "./getPostMetadataBySlug";
 export { getPostSlugs } from "./getPostSlugs";
 export { searchPosts } from "./searchPosts";
 export { getPostsWithCategories } from "./getPostsWithCategories";
