@@ -7,7 +7,11 @@
     "build": "next build",
     "preview": "next build && next start",
     "start": "next start",
-    "test": "bun test src/"
+    "test": "bun test src/",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report",
+    "postinstall": "playwright install --with-deps"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -46,6 +50,7 @@
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "baseline-browser-mapping": "^2.10.8",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.10",
     "happy-dom": "^20.7.0",

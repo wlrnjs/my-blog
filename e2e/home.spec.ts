@@ -35,7 +35,7 @@ test("메인 페이지가 정상적으로 렌더링된다.", async ({ page }) =>
 
   await page.goto("/");
 
-  await expect(page.locator("ul")).toBeVisible();
+  await expect(page.locator("ul").first()).toBeVisible();
   await expect(page.locator("aside")).toBeVisible();
-  await expect(page.getByText("테스트 포스트")).toBeVisible();
+  await expect(page.getByText("테스트 포스트", { exact: true })).toBeVisible();
 });
