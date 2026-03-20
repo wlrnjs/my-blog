@@ -8,5 +8,6 @@ export { getAllTags } from "./getAllTags";
 export { getPostsByTagSlug } from "./getPostsByTagSlug";
 export { getPostsByCategorySlug } from "./getPostsByCategorySlug";
 export { getPostWithPrevNext } from "./getPostWithPrevNext";
+export { getPostMetadata } from "./getPostMetadata";
 export { getRelatedPostsByTagSlug } from "./getRelatedPostsByTagSlug";
 export { getPosts } from "./getPosts";
