@@ -13,9 +13,9 @@ export type PostMetadata = Pick<
   | "author"
 >;
 
-// ⚡ Bolt: Wrap database query in React's cache() to deduplicate fetches during SSR
-// This uses a lightweight query specifically for generateMetadata to avoid fetching the large content column,
-// optimizing Time To First Byte (TTFB) since generateMetadata blocks page rendering.
+// ⚡ Bolt: SSR 중 데이터 페칭 중복을 방지하기 위해 React의 cache()로 데이터베이스 쿼리를 감쌉니다.
+// 이 함수는 generateMetadata에서 무거운 content 컬럼을 불러오는 것을 방지하기 위해 특별히 가벼운 쿼리를 사용하며,
+// generateMetadata가 페이지 렌더링을 차단하므로 TTFB(Time To First Byte)를 최적화합니다.
 export const getPostMetadata = cache(async (slug: string): Promise<PostMetadata | null> => {
   const { data, error } = await supabase
     .from("posts")
