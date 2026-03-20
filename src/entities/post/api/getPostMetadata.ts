@@ -27,7 +27,9 @@ export const getPostMetadata = cache(async (slug: string): Promise<PostMetadata 
     .single();
 
   if (error) {
-    console.error("포스트 메타데이터를 불러오는 중 오류가 발생했습니다:", error);
+    if (error.code !== "PGRST116") {
+      console.error("포스트 메타데이터를 불러오는 중 오류가 발생했습니다:", error);
+    }
     return null;
   }
 
