@@ -9,5 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: "https://www.wlrnjs.xyz/sitemap.xml",
+    host: "https://www.wlrnjs.xyz",
   };
 }
