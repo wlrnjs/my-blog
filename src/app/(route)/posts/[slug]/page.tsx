@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Article } from "@/shared/ui";
 import { SlugPageProps } from "@/shared/types";
-import { getPostBySlug, getPostWithPrevNext, getRelatedPostsByTagSlug } from "@/entities/post/api";
+import { getPostWithPrevNext, getRelatedPostsByTagSlug, getPostMetadata } from "@/entities/post/api";
 import { PostDescription, PostMeta, PostNav, RelatedPosts } from "@/entities/post/ui";
 
 export async function generateMetadata({ params }: SlugPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = await getPostMetadata(slug);
 
   if (!post) {
     return {

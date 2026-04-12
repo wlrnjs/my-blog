@@ -25,7 +25,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           fill
           sizes="(max-width: 768px) 100vw, 450px"
           draggable={false}
-          priority
+          priority={!!featured}
           className="rounded-md object-contain"
         />
       </div>
