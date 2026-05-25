@@ -4,6 +4,7 @@ import { Article } from "@/shared/ui";
 import { SlugPageProps } from "@/shared/types";
 import { getPostWithPrevNext, getRelatedPostsByTagSlug, getPostMetadata } from "@/entities/post/api";
 import { PostDescription, PostMeta, PostNav, RelatedPosts } from "@/entities/post/ui";
+import { LikeButton } from "@/features/like";
 
 export async function generateMetadata({ params }: SlugPageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -60,6 +61,9 @@ export default async function PostPage({ params }: SlugPageProps) {
         }}
       />
       <PostDescription post={post} />
+      <div className="mt-6 flex justify-center">
+        <LikeButton postId={post.id} />
+      </div>
       <PostNav prev={prev} next={next} />
       <RelatedPosts posts={relatedPosts} />
     </Article>
