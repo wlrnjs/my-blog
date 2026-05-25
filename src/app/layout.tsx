@@ -6,6 +6,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { cn } from "../shared/lib";
 import { Header } from "@/widgets";
 import { ThemeProvider } from "./providers/theme-provider";
+import VisitorTracker from "@/widgets/visitor/VisitorTracker";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem enableColorScheme>
           <div className="mx-auto max-w-4xl px-4 py-10">
+            <VisitorTracker />
             <Header />
             <main>{children}</main>
           </div>

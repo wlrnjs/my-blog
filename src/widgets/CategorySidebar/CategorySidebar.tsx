@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { cn } from "@/shared/lib";
 import { TagWithCount } from "@/entities/tag/model";
+import VisitorStatsServer from "@/widgets/visitor/VisitorStatsServer";
 
 const CategorySidebar = ({ tags }: { tags: TagWithCount[] }) => {
   return (
-    <div className="sticky top-28 rounded-xl border border-neutral-200 p-5 text-sm transition-colors dark:border-neutral-800">
-      <ul className="space-y-2">
-        {tags.map((tag) => (
-          <CategorySidebarItem key={tag.id} tag={tag} />
-        ))}
-      </ul>
+    <div className="sticky top-28 space-y-0 text-sm">
+      <VisitorStatsServer />
+      <div className="rounded-xl border border-neutral-200 p-5 transition-colors dark:border-neutral-800">
+        <ul className="space-y-2">
+          {tags.map((tag) => (
+            <CategorySidebarItem key={tag.id} tag={tag} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
