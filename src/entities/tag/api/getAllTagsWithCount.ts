@@ -26,6 +26,7 @@ export async function getAllTagsWithCount(): Promise<TagWithCount[]> {
     const { data, error } = await supabase
       .from("tags_with_post_count")
       .select("id,name,slug,description,post_count")
+      .gt("post_count", 0)
       .order("post_count", { ascending: false })
       .order("name", { ascending: true });
 
