@@ -21,6 +21,11 @@ const securityHeaders = [
 
 const nextConfig = {
   reactStrictMode: true,
+  compiler: {
+    removeConsole: {
+      exclude: ["error", "warn"],
+    },
+  },
   turbopack: {
     rules: {
       "*.svg": {
